@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Geometry Dash Mobile Clone</title>
+<style>
+  body {
+    margin: 0;
+    background: black;
+    overflow: hidden;
+    touch-action: manipulation;
+  }
+  canvas {
+    display: block;
+    margin: auto;
+    background: #111;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="game"></canvas>
+
+<script>
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = 300;
+}
+resize();
+window.addEventListener("resize", resize);
+
+let player = {
+  x: 50,
+  y: 230,
+  size: 20,
+  velocity: 0,
+  jumpPower: -11,
